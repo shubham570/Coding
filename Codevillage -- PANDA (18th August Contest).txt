@@ -1,0 +1,39 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+	Scanner in= new Scanner(System.in);
+		int l= in.nextInt();
+		int r= in.nextInt();
+		int x= in.nextInt();
+		int y= in.nextInt();
+		
+		List<Integer> l1 = new ArrayList<Integer>(); 
+		List<Integer> l2 = new ArrayList<Integer>(); 
+		for(int i=l; i<=r; i++)
+		{
+			l1.add(i);
+			l2.add(i);
+		}
+		int n= l1.size();
+		int count=0;
+		for(int i=0; i<=r-l; i++)
+		{
+			if((l1.get(i)%x==0) || (l1.get(i)%y==0))
+			{
+				
+				l2.remove(i-count);
+				count++;
+			}
+		}
+		System.out.println(n-l2.size());		
+	}
+}
